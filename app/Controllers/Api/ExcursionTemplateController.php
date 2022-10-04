@@ -125,7 +125,7 @@ class ExcursionTemplateController extends ResourceController
 	public function updateExcursionTemplate ($emp_id)
 	{
 		$rules = [
-			"title" => "required|is_unique[excursions_template.title]",
+			"title" => "required",
 			"img" => "required",
 			"type" => "required",
 			"description" => "required",
@@ -136,7 +136,7 @@ class ExcursionTemplateController extends ResourceController
 		$messages = [
 			"title" => [
 				"required" => "title is required",
-				"is_unique" => "title already exists"
+				
 			],
 
 			"img" => [

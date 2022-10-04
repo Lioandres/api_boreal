@@ -120,7 +120,7 @@ public function register()
                     $key = getenv('JWT_SECRET');
 
                     $iat = time(); // current timestamp value
-                    $nbf = $iat + 10;
+                    $nbf = $iat;
                     $exp = $iat + 3600;
 
                     $payload = array(

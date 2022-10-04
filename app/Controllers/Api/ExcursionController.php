@@ -106,7 +106,7 @@ class ExcursionController extends ResourceController
 			$response = [
 				'status' => 200,
 				"error" => false,
-				'message' => 'Single excursion data',
+				'messages' => 'Single excursion data',
 				'data' => $data
 			];
 
@@ -115,7 +115,7 @@ class ExcursionController extends ResourceController
 			$response = [
 				'status' => 500,
 				"error" => true,
-				'message' => 'No excursion found',
+				'messages' => 'No excursion found',
 				'data' => []
 			];
 		}
