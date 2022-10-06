@@ -1,0 +1,19 @@
+ERROR - 2022-10-04 05:08:56 --> Cannot delete or update a parent row: a foreign key constraint fails (`boreal`.`reservations`, CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`excursion_id`) REFERENCES `excursion` (`id_excursion`))
+CRITICAL - 2022-10-04 05:08:56 --> Cannot delete or update a parent row: a foreign key constraint fails (`boreal`.`reservations`, CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`excursion_id`) REFERENCES `excursion` (`id_excursion`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `excursion`
+WHERE `id_excursion` IN (\'1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `excursion`
+WHERE `id_excursion` IN (\'1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `excursion`
+WHERE `id_excursion` IN (\'1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2358): CodeIgniter\Database\BaseConnection->query('DELETE FROM `excursion`
+WHERE `id_excursion` IN :id_excursion:', [...], false)
+ 5 SYSTEMPATH\Model.php(400): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH\BaseModel.php(963): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH\Controllers\Api\ExcursionController.php(218): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Api\ExcursionController->deleteExcursion('1')
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\ExcursionController))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
